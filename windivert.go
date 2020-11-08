@@ -107,7 +107,7 @@ func (wd *WinDivertHandle) Recv() (*Packet, error) {
 		uintptr(unsafe.Pointer(&packetBuffer[0])),
 		uintptr(PacketBufferSize),
 		uintptr(unsafe.Pointer(&packetLen)),
-		uintptr(unsafe.Pointer(&addr))
+		uintptr(unsafe.Pointer(&addr)))
 
 	if success == 0 {
 		return nil, err
