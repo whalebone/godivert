@@ -135,7 +135,7 @@ func (wd *WinDivertHandle) Send(packet *Packet) (uint, error) {
 		uintptr(unsafe.Pointer(&(packet.Raw[0]))),
 		uintptr(packet.PacketLen),
 		uintptr(unsafe.Pointer(&sendLen)),
-		uintptr(unsafe.Pointer(packet.Addr)),
+		uintptr(unsafe.Pointer(packet.Addr)))
 
 	if success == 0 {
 		return 0, err
